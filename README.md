@@ -1,2 +1,2 @@
 # Machine-Learning
-Repo for Machine Learning mini-projects
+ML fundamentals with reusable implementations and notebooks
