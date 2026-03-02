@@ -149,7 +149,7 @@ def plot_confusion_matrix(cm):
 
 def get_TP_FP_FN_TN(cm):
     import pandas as pd
-    
+
     cm = np.asarray(cm)
     K = cm.shape[0]
     N = cm.sum()
@@ -175,4 +175,4 @@ def get_TP_FP_FN_TN(cm):
 
 
 
-# --- end: confusion matrix ---
+# ---- end: confusion matrix ---
