@@ -95,6 +95,9 @@ def simulate_labels(N, K, pi, P, seed=0):
 
     y_true = rng.choice(K, size=N, p=pi)
     y_pred = np.array([rng.choice(K, p=P[t]) for t in y_true], dtype=int)
+    
+    for i in range(K):
+        print(f"Class {i}: {np.sum(y_true == i)} samples ({np.sum(y_true == i)/N*100:.1f}%)")
     return y_true, y_pred
 
 
@@ -115,7 +118,7 @@ def get_confusion_matrix(y_true, y_pred):
 
     return cm
 
-def plot_confusion_matrix(cm):
+def plot_confusion_matrix(cm, data_type =""):
     import seaborn as sns
     import matplotlib.pyplot as plt
 
@@ -142,7 +145,7 @@ def plot_confusion_matrix(cm):
     ax.set_xlabel("Predicted Class", fontsize=12)
     ax.set_ylabel("Actual Class", fontsize=12)
 
-    plt.title("Confusion Matrix", pad=30)
+    plt.title(f"Confusion Matrix: {data_type}", pad=30)
     plt.tight_layout()
     plt.show()
 
